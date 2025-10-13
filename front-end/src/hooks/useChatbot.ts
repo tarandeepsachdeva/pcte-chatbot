@@ -18,7 +18,8 @@ interface Chat {
 
 // The URL for your Python backend server
 // Use environment variable for production, fallback to localhost for development
-const API_URL = import.meta.env.VITE_API_URL || 'http://localhost:8000/chat';
+const API_URL = import.meta.env.VITE_API_URL || 
+  (import.meta.env.PROD ? '/api/chat' : 'http://localhost:8000/chat');
 
 const formatTime = (date: Date): string => {
   return date.toLocaleTimeString([], { hour: '2-digit', minute: '2-digit' });
