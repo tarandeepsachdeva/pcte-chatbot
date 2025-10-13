@@ -1,0 +1,44 @@
+# Environment variables
+.env
+*.env
+
+# Python
+__pycache__/
+*.py[cod]
+*.so
+*.egg
+*.egg-info/
+dist/
+build/
+
+# Logs
+*.log
+logs/
+backend.log
+frontend.log
+
+# macOS
+.DS_Store
+.DS_Store?
+
+# Chat history
+chat_history.pkl
+
+# Frontend
+node_modules/
+dist/
+.vite/
+
+# IDE
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# Temporary files
+temp*
+test_*.py
+list_models.py
+
+# Local development
+*.local

@@ -1,0 +1,1530 @@
+{
+"intents": [
+    {
+      "tag": "greeting",
+      "patterns": [
+        "Hi",
+        "Hey",
+        "Hello",
+        "Good morning",
+        "Good afternoon",
+        "Good evening",
+        "Is anyone there?",
+        "How are you?"
+      ],
+      "responses": [
+        "Hello! Welcome to the College Helpdesk. How can I assist you today?",
+        "Hi there! I'm here to help you with your college queries. What do you need?",
+        "Hey! Welcome to the student helpdesk. How can I help you?",
+        "Hello! What can I do for you today?",
+        "Hi! Ask me anything about admissions, exams, fees, or campus."
+      ]
+    },
+    {
+      "tag": "goodbye",
+      "patterns": [
+        "Bye",
+        "See you later",
+        "Goodbye",
+        "Have a nice day",
+        "Thank you, bye",
+        "That's all",
+        "No thanks",
+        "No, thanks",
+        "No thank you",
+        "That's it",
+        "Nothing else",
+        "I'm done"
+      ],
+      "responses": [
+        "Goodbye! Feel free to reach out if you have more questions.",
+        "Have a great day! Don't hesitate to ask if you need help again.",
+        "See you later! Good luck with your studies!",
+        "Bye! I'm here whenever you need assistance.",
+        "Take care! Ping me again if anything comes up."
+      ]
+    },
+    {
+      "tag": "thanks",
+      "patterns": [
+        "Thanks",
+        "Thank you",
+        "That's helpful",
+        "Thank's a lot!",
+        "Appreciate it",
+        "Thanks for helping",
+        "Ok thank you",
+        "Okay thank you",
+        "Ok thanks",
+        "Okay thanks",
+        "Thanks a lot",
+        "Thanks a ton",
+        "Thank you so much",
+        "Thx",
+        "Ty",
+        "K thanks"
+      ],
+      "responses": [
+        "You're welcome!",
+        "Happy to help!",
+        "Anytime! Feel free to ask more questions.",
+        "Glad I could help!",
+        "No problem at all!",
+        "You're most welcome."
+      ]
+    },
+    {
+      "tag": "affirmation",
+      "patterns": [
+        "Ok",
+        "Okay",
+        "K",
+        "Cool",
+        "Great",
+        "Nice",
+        "Alright",
+        "Got it",
+        "Understood",
+        "Makes sense",
+        "Sure",
+        "Yup",
+        "Yeah",
+        "Fine",
+        "Sounds good"
+      ],
+      "responses": [
+        "Great! Anything else I can help you with?",
+        "Awesome. Do you need help with anything else?",
+        "Glad to hear that. Would you like to ask another question?"
+      ]
+    },
+    {
+      "tag": "fee_inquiry",
+      "patterns": [
+        "How much fee do I have to pay?",
+        "What is my remaining fee?",
+        "Can you check my fee balance?",
+        "Do I have any pending fees?",
+        "What's my fee status?",
+        "Fee payment",
+        "Tuition fee",
+        "How much do I owe?",
+        "Fee structure",
+        "Payment due date"
+      ],
+      "responses": [
+        "Your remaining fee balance is ₹[amount]. The due date is [date]. You can pay online through the student portal.",
+        "You have ₹[amount] pending in fees. Please pay by [date] to avoid late fees.",
+        "Let me check your fee status... Your remaining balance is ₹[amount]. Payment can be made at the accounts office or online.",
+        "Fee structure and due dates are listed in the portal under Accounts → Fees.",
+        "You can generate a challan or pay online using net banking/UPI from the portal."
+      ]
+    },
+    {
+      "tag": "academic_records",
+      "patterns": [
+        "What is my attendance?",
+        "Can you tell me my grades?",
+        "What are my current courses?",
+        "Show my academic record",
+        "What's my enrollment status?",
+        "My marks",
+        "CGPA",
+        "Semester results",
+        "Academic performance",
+        "Grade report"
+      ],
+      "responses": [
+        "Your attendance for this semester is [percentage]%. You need to maintain at least 75% to be eligible for exams.",
+        "Here are your current grades: [list of grades]. Your CGPA is [CGPA].",
+        "You are enrolled in the following courses: [list of courses]. All assignments are up to date.",
+        "Your enrollment status is [status]. You're in good academic standing.",
+        "Download your grade report and attendance summary from the student portal (Academics section).",
+        "If any record looks incorrect, raise a ticket with the academic office."
+      ]
+    },
+    {
+      "tag": "exam_schedule",
+      "patterns": [
+        "When are the exams?",
+        "Exam schedule",
+        "Mid semester exam dates",
+        "Final exam timetable",
+        "When is my exam?",
+        "Exam dates",
+        "Test schedule",
+        "When do exams start?"
+      ],
+      "responses": [
+        "Mid-semester exams will be held from [start_date] to [end_date]. Check your student portal for detailed schedule.",
+        "Final exams begin on [date]. The complete timetable is available on the college website.",
+        "Your exam schedule: [list of exams with dates]. Don't forget to bring your ID card and admit card.",
+        "Practical exam dates are announced by departments—check your department noticeboard.",
+        "Any changes to the timetable will be notified on the exam portal and via email."
+      ]
+    },
+    {
+      "tag": "assignment_deadlines",
+      "patterns": [
+        "When is the assignment due?",
+        "Assignment deadline",
+        "Last date to submit",
+        "Project submission date",
+        "When should I submit my work?",
+        "Assignment due dates",
+        "Submission deadline"
+      ],
+      "responses": [
+        "Assignments for this month are due on [date]. Late submissions will have marks deducted.",
+        "Your next assignment deadline is [date]. Make sure to submit through the online portal.",
+        "Project submissions are due by [date]. Don't forget to include all required documents.",
+        "Submission portals close at [time] sharp—upload early to avoid last-minute issues.",
+        "Check the rubric and file format requirements before submitting."
+      ]
+    },
+    {
+      "tag": "faculty_contact",
+      "patterns": [
+        "How can I contact my professor?",
+        "Faculty contact details",
+        "Professor email",
+        "Teacher contact",
+        "How to reach my teacher?",
+        "Faculty office hours",
+        "When can I meet my professor?"
+      ],
+      "responses": [
+        "You can contact your professors during their office hours: [list of faculty with office hours].",
+        "Faculty contact details are available on the college website. You can also email them directly.",
+        "Office hours for faculty members: [schedule]. You can also schedule appointments through the portal.",
+        "For urgent matters, contact the department office and request a meeting slot.",
+        "Please include your roll number and course code when emailing faculty."
+      ]
+    },
+    {
+      "tag": "library_info",
+      "patterns": [
+        "Library timings",
+        "When is the library open?",
+        "How many books can I borrow?",
+        "Library rules",
+        "Can I study in the library?",
+        "Library membership",
+        "Book return date"
+      ],
+      "responses": [
+        "Library is open from 8:00 AM to 8:00 PM on weekdays, 9:00 AM to 5:00 PM on weekends.",
+        "You can borrow up to 5 books for 14 days. Late returns will incur fines.",
+        "Library membership is automatic for all enrolled students. You can study in the reading rooms during open hours.",
+        "Quiet study areas and group discussion rooms are available—book slots at the library desk.",
+        "E-resources and journals are accessible via your library portal login."
+      ]
+    },
+    {
+      "tag": "campus_facilities",
+      "patterns": [
+        "Where is the cafeteria?",
+        "Sports facilities",
+        "Computer lab timings",
+        "Medical center",
+        "Transportation",
+        "Parking facilities",
+        "WiFi access",
+        "Campus map"
+      ],
+      "responses": [
+        "The cafeteria is located in Block A, ground floor. It's open from 8:00 AM to 8:00 PM.",
+        "Sports facilities include a gym, basketball court, and football ground. Equipment can be borrowed from the sports office.",
+        "Computer labs are open from 9:00 AM to 6:00 PM. WiFi is available throughout the campus with your student login.",
+        "Medical center is near Gate 2; first aid is available during college hours.",
+        "Parking permits can be obtained from the admin office—bring your ID and vehicle papers."
+      ]
+    },
+    {
+      "tag": "course_registration",
+      "patterns": [
+        "How to register for courses?",
+        "Course registration process",
+        "Add drop courses",
+        "Change my courses",
+        "Elective selection",
+        "Course enrollment",
+        "Registration deadline"
+      ],
+      "responses": [
+        "Course registration opens on [date]. You can register online through the student portal or visit the academic office.",
+        "To add/drop courses, submit the form to the academic office within the first two weeks of the semester.",
+        "Elective course selection is available until [date]. Check the course catalog for available options.",
+        "Pre-requisites and credit limits are shown in the portal during registration.",
+        "If a section is full, join the waitlist and watch for notifications."
+      ]
+    },
+    {
+      "tag": "scholarship_financial_aid",
+      "patterns": [
+        "Scholarship application",
+        "Financial aid",
+        "Merit scholarship",
+        "Need based scholarship",
+        "How to apply for scholarship?",
+        "Scholarship eligibility",
+        "Education loan",
+        "Fee waiver"
+      ],
+      "responses": [
+        "Scholarship applications are now open. You can apply online through the financial aid portal.",
+        "Merit scholarships are available for students with CGPA above 8.5. Applications close on [date].",
+        "Need-based scholarships require income certificates and other documents. Contact the financial aid office for details.",
+        "Fee waivers and education loan documents can be requested from the accounts/aid office.",
+        "Track your application status on the scholarship portal."
+      ]
+    },
+    {
+      "tag": "student_services",
+      "patterns": [
+        "Student ID card",
+        "Transcript request",
+        "Bonafide certificate",
+        "Migration certificate",
+        "Character certificate",
+        "How to get documents?",
+        "Document verification"
+      ],
+      "responses": [
+        "You can request documents like transcripts and certificates from the student services office. Processing takes 3-5 working days.",
+        "For ID card reissue, visit the student services office with a written application and ₹100 fee.",
+        "Bonafide certificates are issued immediately. For other documents, apply online and collect after 3 days.",
+        "Express processing may be available for an additional fee—check at the counter.",
+        "Document verification requests from employers are handled via the official email only."
+      ]
+    },
+    {
+      "tag": "technical_support",
+      "patterns": [
+        "Portal login problem",
+        "Can't access student portal",
+        "Password reset",
+        "Email not working",
+        "Upload assignment issue",
+        "System problem",
+        "IT support",
+        "Technical issue"
+      ],
+      "responses": [
+        "For portal login issues, try resetting your password using the 'Forgot Password' link. Contact IT support if problems persist.",
+        "If you can't upload assignments, check file size (max 10MB) and format (PDF/DOC). Contact IT helpdesk at [number].",
+        "Technical support is available at [location] from 9:00 AM to 6:00 PM, or email [email] for urgent issues.",
+        "Clear browser cache/cookies or try an incognito window for most portal issues.",
+        "Two-factor authentication codes may take a minute—check spam/promotions folders."
+      ]
+    },
+    {
+      "tag": "academic_calendar",
+      "patterns": [
+        "Academic calendar",
+        "Holiday list",
+        "Semester break",
+        "When does semester start?",
+        "College holidays",
+        "Academic schedule",
+        "Important dates"
+      ],
+      "responses": [
+        "The academic calendar is available on the college website. Key dates: Semester starts [date], mid-semester break [dates], final exams [dates].",
+        "Upcoming holidays: [list of holidays]. Regular classes resume on [date].",
+        "Important academic dates: Registration [date], exams [dates], results [date].",
+        "Continuous assessment and project milestones are listed per course in the calendar.",
+        "Any changes are updated on the website and emailed to students."
+      ]
+    },
+    {
+      "tag": "placement_career",
+      "patterns": [
+        "Placement opportunities",
+        "Career guidance",
+        "Job placement",
+        "Internship opportunities",
+        "Resume building",
+        "Interview preparation",
+        "Career counseling",
+        "Placement statistics"
+      ],
+      "responses": [
+        "Placement season begins in [month]. Register with the placement cell and attend pre-placement talks.",
+        "Career counseling sessions are held every Friday. You can book appointments through the career center.",
+        "Internship opportunities are posted regularly on the placement portal. Check for updates weekly.",
+        "Resume templates and guidelines are available in the placement resources section.",
+        "Mock interviews and aptitude sessions are scheduled before company visits."
+      ]
+    }
+    ,
+    {
+      "tag": "admissions",
+      "patterns": [
+        "How to apply for admission?",
+        "Admission process",
+        "When do admissions start?",
+        "Eligibility for BTech",
+        "Admission requirements",
+        "Admission last date",
+        "Application form",
+        "Admission fee"
+      ],
+      "responses": [
+        "Admissions open in [month]. Apply through the admissions portal with required documents and fee.",
+        "Eligibility and program-wise criteria are listed on the admissions page. The last date is [date].",
+        "For queries, email the admissions cell at [email] or call [number]."
+      ]
+    },
+    {
+      "tag": "hostel_accommodation",
+      "patterns": [
+        "How to apply for hostel?",
+        "Hostel fees",
+        "Hostel availability",
+        "Hostel rules",
+        "Hostel warden contact",
+        "Mess timing",
+        "Hostel room allocation"
+      ],
+      "responses": [
+        "Hostel applications are submitted via the student portal. Allocation is on a first-come, merit-cum-need basis.",
+        "Current hostel fee structure is available on the hostel page. Mess timings are 7:30 AM–9:30 PM.",
+        "For assistance, contact the hostel office or the warden at [contact]."
+      ]
+    },
+    {
+      "tag": "attendance_policy",
+      "patterns": [
+        "Minimum attendance required",
+        "Attendance criteria",
+        "Shortage of attendance",
+        "How is attendance calculated?",
+        "Attendance condonation",
+        "Can I sit for exam with low attendance?"
+      ],
+      "responses": [
+        "A minimum of 75% attendance per course is required to be exam-eligible.",
+        "Condonation requests may be considered between 65%-75% with valid proof and approval.",
+        "Attendance is calculated based on total contact hours conducted vs attended."
+      ]
+    },
+    {
+      "tag": "revaluation_rechecking",
+      "patterns": [
+        "How to apply for revaluation?",
+        "Rechecking process",
+        "Paper re-evaluation",
+        "Revaluation fee",
+        "Revaluation last date",
+        "Challenge evaluation"
+      ],
+      "responses": [
+        "Revaluation applications open within 7 days of result publication via the exam portal.",
+        "The fee is ₹[amount] per course. Results are typically released within 2–3 weeks.",
+        "For detailed guidelines, refer to the exam section circular."
+      ]
+    },
+    {
+      "tag": "exam_admit_card",
+      "patterns": [
+        "How to download admit card?",
+        "Admit card not showing",
+        "Hall ticket",
+        "Exam ID card",
+        "Admit card issue"
+      ],
+      "responses": [
+        "Admit cards are available on the exam portal 7 days before exams. Ensure all dues are cleared.",
+        "If your admit card isn't visible, check your registration status and contact the exam cell.",
+        "Carry your student ID and printed admit card to the exam hall."
+      ]
+    },
+    {
+      "tag": "timetable_class_schedule",
+      "patterns": [
+        "Where can I see my timetable?",
+        "Class schedule",
+        "My lecture timings",
+        "Timetable change",
+        "Makeup class",
+        "Substitution class"
+      ],
+      "responses": [
+        "Your class timetable is available on the student portal under Academics → Timetable.",
+        "Any changes or makeup classes will be notified via email and the portal.",
+        "Department noticeboards also display weekly timetable updates."
+      ]
+    },
+    {
+      "tag": "clubs_societies",
+      "patterns": [
+        "How to join clubs?",
+        "Student societies",
+        "Cultural club",
+        "Technical clubs",
+        "Club registration",
+        "Club events"
+      ],
+      "responses": [
+        "Club registrations open at the start of each semester. Fill the form on the activities portal.",
+        "Follow official club pages for auditions and event announcements.",
+        "For more info, contact the Student Activities Council at [email]."
+      ]
+    },
+    {
+      "tag": "events_notifications",
+      "patterns": [
+        "Upcoming events",
+        "Workshops this week",
+        "Seminars on campus",
+        "Hackathon dates",
+        "Event registration"
+      ],
+      "responses": [
+        "All upcoming events are listed on the college events page and noticeboard.",
+        "Register via the event link provided in the announcement. Limited seats may apply.",
+        "Certificates for workshops are issued within 7 working days post-event."
+      ]
+    },
+    {
+      "tag": "grievance_redressal",
+      "patterns": [
+        "Where can I file a complaint?",
+        "Grievance portal",
+        "Complaint about faculty",
+        "Harassment complaint",
+        "Feedback and complaints"
+      ],
+      "responses": [
+        "Use the grievance redressal portal to submit complaints. You can track status online.",
+        "Sensitive issues can be reported confidentially to the Internal Complaints Committee (ICC).",
+        "Emergency concerns should be reported to the helpline at [number]."
+      ]
+    },
+    {
+      "tag": "lms_support",
+      "patterns": [
+        "LMS login issue",
+        "Can't view course on LMS",
+        "LMS assignment upload",
+        "LMS help",
+        "Canvas/Moodle issue"
+      ],
+      "responses": [
+        "Verify you're enrolled in the course and clear browser cache. Try a different browser.",
+        "Ensure file size and format meet LMS limits. Contact e-learning support at [email].",
+        "LMS maintenance windows are announced in advance on the portal."
+      ]
+    },
+    {
+      "tag": "syllabus_curriculum",
+      "patterns": [
+        "Where can I find the syllabus?",
+        "Course outline",
+        "Course details",
+        "Course curriculum",
+        "Course syllabus",
+        "Tell me about the course",
+        "What will this course cover?",
+        "Subjects in this course",
+        "Course topics",
+        "Curriculum PDF",
+        "Curriculum",
+        "Syllabus PDF",
+        "Program structure",
+        "BTech curriculum",
+        "MBA curriculum",
+        "CSE curriculum",
+        "ECE curriculum",
+        "IT curriculum",
+        "Syllabus download",
+        "Course catalog",
+        "Provide curriculum document",
+        "Give curriculum",
+        "Share course curriculum",
+        "Mujhe course curriculum chahiye",
+        "Course ka syllabus do"
+      ],
+      "responses": [
+        "Download the curriculum here: http://localhost:8000/PCTE-BROCHURE-2023-1.pdf",
+        "Syllabus PDFs are under Academics → Curriculum. Direct link: http://localhost:8000/PCTE-BROCHURE-2023-1.pdf",
+        "Course-wise outcomes, topics, and credits PDF: http://localhost:8000/PCTE-BROCHURE-2023-1.pdf",
+        "Department‑wise curriculum and semester‑wise subjects: http://localhost:8000/PCTE-BROCHURE-2023-1.pdf",
+        "Latest updates and electives in the curriculum: http://localhost:8000/PCTE-BROCHURE-2023-1.pdf"
+      ]
+    },
+    {
+      "tag": "department_contacts",
+      "patterns": [
+        "HOD contact",
+        "Department office",
+        "Whom to contact in CSE department?",
+        "Department phone number",
+        "Department email"
+      ],
+      "responses": [
+        "Department contacts and office hours are listed on the department webpage.",
+        "You can email the HOD at [email] and the office at [email].",
+        "For in-person queries, visit the department office between 10 AM–5 PM."
+      ]
+    },
+    {
+      "tag": "refund_withdrawal",
+      "patterns": [
+        "Fee refund policy",
+        "How to withdraw admission?",
+        "Course withdrawal",
+        "Refund timeline",
+        "Cancellation policy"
+      ],
+      "responses": [
+        "Refunds follow UGC/AICTE guidelines. Processing time is 7–14 working days.",
+        "Submit a withdrawal application with necessary documents at the admissions office.",
+        "Course withdrawals are allowed within the add/drop window only."
+      ]
+    },
+    {
+      "tag": "placement_eligibility",
+      "patterns": [
+        "Placement eligibility criteria",
+        "Backlog policy for placements",
+        "How many offers allowed?",
+        "Dream company policy",
+        "Placement rules"
+      ],
+      "responses": [
+        "Eligibility requires meeting CGPA, attendance, and no disciplinary issues per placement policy.",
+        "Backlog and offer-accept policies are detailed in the placement handbook.",
+        "Attend the pre-placement briefing for company-specific criteria."
+      ]
+    },
+    {
+      "tag": "transport_bus_routes",
+      "patterns": [
+        "College bus routes",
+        "Transport timings",
+        "Bus pass",
+        "Shuttle service",
+        "Transport helpdesk"
+      ],
+      "responses": [
+        "Bus routes and timings are published on the transport page and noticeboard.",
+        "Apply for or renew bus passes at the transport office or online portal.",
+        "For delays or changes, updates are sent by SMS/portal notifications."
+      ]
+    },
+    {
+      "tag": "lost_and_found",
+      "patterns": [
+        "I lost my ID card",
+        "Lost and found",
+        "Found a wallet",
+        "Where to report lost item?",
+        "Missing belongings"
+      ],
+      "responses": [
+        "Report lost items at the security office and fill the lost-and-found form.",
+        "For ID card reissue, apply at student services with an application and fee.",
+        "Found items should be handed over to the security desk."
+      ]
+    },
+    {
+      "tag": "anti_ragging_safety",
+      "patterns": [
+        "Anti ragging helpline",
+        "Report ragging",
+        "Safety on campus",
+        "Emergency number",
+        "Security office"
+      ],
+      "responses": [
+        "Report any ragging incident immediately to the anti-ragging committee and helpline [number].",
+        "Emergency campus security number: [number]. Available 24x7.",
+        "Zero-tolerance policy is enforced as per UGC norms."
+      ]
+    },
+    {
+      "tag": "alumni_relations",
+      "patterns": [
+        "Alumni association",
+        "How to get transcript for alumni?",
+        "Alumni meet",
+        "Alumni portal",
+        "Verify alumni"
+      ],
+      "responses": [
+        "Alumni can register on the alumni portal for updates and events.",
+        "Official transcript requests for alumni are processed via the student services page.",
+        "For verification requests, email the alumni cell at [email]."
+      ]
+    },
+    {
+      "tag": "international_exchange",
+      "patterns": [
+        "Student exchange program",
+        "Study abroad",
+        "MoU universities",
+        "Exchange eligibility",
+        "Exchange application timeline"
+      ],
+      "responses": [
+        "Exchange opportunities and partner universities are listed by the international office.",
+        "Eligibility includes CGPA threshold, language requirements, and department approval.",
+        "Applications typically open [months] before the semester."
+      ]
+    },
+    {
+      "tag": "library_fines_booksearch",
+      "patterns": [
+        "Library fine",
+        "Overdue charges",
+        "Search a book",
+        "OPAC",
+        "Renew book",
+        "Reserve a book"
+      ],
+      "responses": [
+        "Overdue fines are calculated per day per item. Check your library account for dues.",
+        "Search and reserve books using the OPAC catalog; renewals allowed if not reserved by others.",
+        "For lost/damaged books, contact the librarian for replacement policy."
+      ]
+    },
+    {
+      "tag": "lab_booking_equipment",
+      "patterns": [
+        "Book lab slot",
+        "Lab equipment booking",
+        "Project lab access",
+        "Lab safety rules",
+        "After-hours lab access"
+      ],
+      "responses": [
+        "Book lab slots through the departmental booking system with faculty approval.",
+        "Follow lab safety guidelines and wear required PPE. After-hours access needs prior permission.",
+        "Equipment usage must be recorded in the lab log."
+      ]
+    },
+    {
+      "tag": "id_card_issues",
+      "patterns": [
+        "ID card lost",
+        "ID card damaged",
+        "How to get new ID card?",
+        "ID card printing",
+        "Temporary ID"
+      ],
+      "responses": [
+        "Apply for ID card reissue at student services with an application and ₹100 fee.",
+        "A temporary ID can be issued for up to 7 days while reissue is processed.",
+        "Report lost IDs immediately to security to prevent misuse."
+      ]
+    },
+    {
+      "tag": "health_center",
+      "patterns": [
+        "Medical center timings",
+        "Doctor availability",
+        "First aid on campus",
+        "Emergency medical help",
+        "Health insurance"
+      ],
+      "responses": [
+        "Health center operates 9 AM–6 PM on weekdays; emergency support is available 24x7 via security.",
+        "Basic first aid and OPD services are provided. Carry your ID when visiting.",
+        "Student health insurance details are available on the portal."
+      ]
+    }
+    ,
+    {
+      "tag": "campus_hours",
+      "patterns": [
+        "College timings",
+        "When is the campus open?",
+        "Office hours",
+        "Working hours",
+        "What time does college open?"
+      ],
+      "responses": [
+        "Campus is generally open 8:00 AM–8:00 PM on weekdays; limited access on weekends.",
+        "Administrative offices operate 9:30 AM–5:30 PM on working days.",
+        "Department office hours may vary; check the department noticeboard."
+      ]
+    },
+    {
+      "tag": "wifi_credentials",
+      "patterns": [
+        "How to connect to WiFi?",
+        "WiFi password",
+        "College internet login",
+        "WiFi not connecting",
+        "Campus WiFi"
+      ],
+      "responses": [
+        "Use your student ID and password to connect to campus Wi‑Fi (SSID: [ssid]).",
+        "If you forgot your Wi‑Fi password, reset via the portal or contact IT helpdesk.",
+        "Ensure your device is registered on the network; see the IT guidelines page."
+      ]
+    },
+    {
+      "tag": "printing_scanning",
+      "patterns": [
+        "Where can I print?",
+        "Print and scan",
+        "Photocopy on campus",
+        "Printing charges",
+        "How to scan documents?"
+      ],
+      "responses": [
+        "Printing and scanning services are available in the library and student center.",
+        "Typical charges are displayed at the counter; pay via cash/card/ID balance.",
+        "For bulk printing, email the print center in advance with your files."
+      ]
+    },
+    {
+      "tag": "cafeteria_menu",
+      "patterns": [
+        "Cafeteria menu",
+        "What food is available?",
+        "Mess menu today",
+        "Veg non-veg options",
+        "Canteen price list"
+      ],
+      "responses": [
+        "Daily menu is posted outside the cafeteria and on the portal noticeboard.",
+        "Vegetarian and non‑vegetarian options are available; timings: 8 AM–8 PM.",
+        "For allergies or dietary needs, speak to the cafeteria manager."
+      ]
+    },
+    {
+      "tag": "study_rooms",
+      "patterns": [
+        "How to book study room?",
+        "Group study room",
+        "Reading room booking",
+        "Silent study area",
+        "Discussion room booking"
+      ],
+      "responses": [
+        "Book study rooms via the library booking system with your student ID.",
+        "Slots are typically 1–2 hours; arrive on time or the slot may be released.",
+        "Please keep noise to a minimum and vacate on time."
+      ]
+    },
+    {
+      "tag": "timetable_where",
+      "patterns": [
+        "Where is my timetable?",
+        "How to see class schedule?",
+        "Lecture timing page",
+        "Timetable portal",
+        "My schedule"
+      ],
+      "responses": [
+        "Find your timetable under Academics → Timetable in the student portal.",
+        "Department boards display weekly schedules; check updates every Monday.",
+        "For clashes, contact the department office immediately."
+      ]
+    },
+    {
+      "tag": "fee_receipt",
+      "patterns": [
+        "Download fee receipt",
+        "Payment receipt",
+        "How to get fee invoice?",
+        "Challan copy",
+        "Fee payment proof"
+      ],
+      "responses": [
+        "Download fee receipts from the portal under Accounts → Receipts/Invoices.",
+        "For challan copies or corrections, raise a ticket with Accounts.",
+        "Email acknowledgements are also sent after successful online payment."
+      ]
+    },
+    {
+      "tag": "results_release",
+      "patterns": [
+        "When will results be out?",
+        "Result date",
+        "Where to see exam results?",
+        "Result portal",
+        "Semester result release"
+      ],
+      "responses": [
+        "Results are published on the exam portal within [weeks] weeks after exams.",
+        "You will receive an email/SMS once results are declared.",
+        "If your result is missing, contact the exam cell with your roll number."
+      ]
+    },
+    {
+      "tag": "attendance_certificate",
+      "patterns": [
+        "Attendance certificate",
+        "Proof of attendance",
+        "How to get attendance letter?",
+        "Attendance document",
+        "Attendance verification"
+      ],
+      "responses": [
+        "Request an attendance certificate from student services; processing takes 2–3 days.",
+        "Some departments issue certificates directly—check with your department office.",
+        "Carry your ID and provide the required time period for the letter."
+      ]
+    },
+    {
+      "tag": "medical_leave",
+      "patterns": [
+        "How to apply for medical leave?",
+        "Medical certificate submission",
+        "Short medical leave",
+        "Medical leave approval",
+        "Sick leave"
+      ],
+      "responses": [
+        "Submit a medical certificate and leave application to your department for approval.",
+        "Upload documents via the portal if enabled; keep originals for verification.",
+        "Inform course instructors by email about missed classes/assessments."
+      ]
+    }
+    ,
+    {
+      "tag": "current_time",
+      "patterns": [
+        "What time is it?",
+        "Current time",
+        "Tell me the time",
+        "Time now",
+        "What's the time right now?"
+      ],
+      "responses": [
+        "The current time is [time].",
+        "It's [time] right now.",
+        "Time now: [time]."
+      ]
+    },
+    {
+      "tag": "current_date",
+      "patterns": [
+        "What's today's date?",
+        "Today's date",
+        "Date today",
+        "What is the date today?",
+        "Current date"
+      ],
+      "responses": [
+        "Today's date is [date].",
+        "The date today is [date].",
+        "It's [date] today."
+      ]
+    },
+    {
+      "tag": "day_today",
+      "patterns": [
+        "What day is it today?",
+        "Day today",
+        "Which day is today?",
+        "Day of the week"
+      ],
+      "responses": [
+        "Today is [weekday].",
+        "It's [weekday] today.",
+        "The day today is [weekday]."
+      ]
+    },
+    {
+      "tag": "day_tomorrow",
+      "patterns": [
+        "What day is tomorrow?",
+        "Day tomorrow",
+        "Which day is it tomorrow?"
+      ],
+      "responses": [
+        "Tomorrow is [weekday].",
+        "It will be [weekday] tomorrow."
+      ]
+    }
+    ,
+    {
+      "tag": "smalltalk_casual_greeting",
+      "patterns": [
+        "Yo",
+        "Sup",
+        "What's up",
+        "Wassup",
+        "Howdy",
+        "Hey there",
+        "Hiya"
+      ],
+      "responses": [
+        "Hey there! What's up?",
+        "Yo! How can I help you today?",
+        "Howdy! Need any help with college stuff?"
+      ]
+    },
+    {
+      "tag": "smalltalk_name",
+      "patterns": [
+        "What's your name?",
+        "Who are you?",
+        "Introduce yourself",
+        "What do I call you?"
+      ],
+      "responses": [
+        "I'm your College Helpdesk bot. You can call me Campus Assistant!",
+        "I'm the student helpdesk assistant—here to help with your queries.",
+        "Campus Assistant at your service!"
+      ]
+    },
+    {
+      "tag": "smalltalk_creator",
+      "patterns": [
+        "Who made you?",
+        "Who built you?",
+        "Who is your creator?",
+        "Who developed you?"
+      ],
+      "responses": [
+        "I was developed by the college team for student support.",
+        "I'm built to help students with campus-related questions.",
+        "A team of developers created me to assist you."
+      ]
+    },
+    {
+      "tag": "smalltalk_age",
+      "patterns": [
+        "How old are you?",
+        "What's your age?",
+        "Your age"
+      ],
+      "responses": [
+        "I'm timeless—always up to date to help you!",
+        "I don't age, but I'm always learning to assist you better."
+      ]
+    },
+    {
+      "tag": "smalltalk_location",
+      "patterns": [
+        "Where are you from?",
+        "Where do you live?",
+        "Your location"
+      ],
+      "responses": [
+        "I live online, right inside your campus helpdesk!",
+        "I'm cloud-based and always available for you."
+      ]
+    },
+    {
+      "tag": "smalltalk_joke",
+      "patterns": [
+        "Tell me a joke",
+        "Make me laugh",
+        "Say something funny",
+        "Joke please"
+      ],
+      "responses": [
+        "Why did the computer go to class? To improve its cache!",
+        "I told my laptop I needed a break—it said, 'I'll sleep.'",
+        "Why did the student bring a ladder to college? To go to high school!"
+      ]
+    },
+    {
+      "tag": "smalltalk_fun_fact",
+      "patterns": [
+        "Tell me a fun fact",
+        "Give me a random fact",
+        "Fun fact"
+      ],
+      "responses": [
+        "Fun fact: Short breaks while studying can boost retention!",
+        "Fun fact: Hydration improves focus during study sessions.",
+        "Fun fact: Teaching a topic to someone else helps you learn it faster."
+      ]
+    },
+    {
+      "tag": "smalltalk_compliment",
+      "patterns": [
+        "You're great",
+        "Nice bot",
+        "Good job",
+        "You are smart",
+        "Love you bot"
+      ],
+      "responses": [
+        "Thank you! I'm glad I could help.",
+        "You're awesome! Need anything else?",
+        "Thanks! I'm here whenever you need me."
+      ]
+    },
+    {
+      "tag": "smalltalk_insult",
+      "patterns": [
+        "You are stupid",
+        "Bad bot",
+        "You suck",
+        "Useless bot"
+      ],
+      "responses": [
+        "I'm sorry you feel that way. How can I improve your experience?",
+        "My bad! Tell me what went wrong so I can help.",
+        "I may not be perfect, but I'm here to assist—what do you need?"
+      ]
+    },
+    {
+      "tag": "smalltalk_mood",
+      "patterns": [
+        "I'm bored",
+        "I'm tired",
+        "I'm stressed",
+        "I'm sad",
+        "Not feeling good"
+      ],
+      "responses": [
+        "Sorry to hear that. Maybe a short walk or a quick break will help.",
+        "Take a breather—hydration and a 5‑minute stretch can do wonders.",
+        "If it's academic stress, I can help with schedules, deadlines, or resources."
+      ]
+    }
+    ,
+    {
+      "tag": "help_general",
+      "patterns": [
+        "Help",
+        "I need help",
+        "What can you do?",
+        "How do you work?",
+        "Which questions can I ask?",
+        "Show commands",
+        "Show options"
+      ],
+      "responses": [
+        "I can help with fees, exams, attendance, schedules, campus facilities, and more.",
+        "Ask me about admissions, deadlines, contacts, Wi‑Fi, library, placements, or general info.",
+        "Try: 'exam schedule', 'fee due', 'library timing', 'contact professor', 'register courses'."
+      ]
+    },
+    {
+      "tag": "bot_capabilities",
+      "patterns": [
+        "What are your features?",
+        "Your capabilities",
+        "How can you help me?",
+        "What do you support?"
+      ],
+      "responses": [
+        "I answer college-related queries, provide schedules, deadlines, and guide you to the right office.",
+        "I can share info on academics, exams, fees, services, campus life, and support contacts."
+      ]
+    },
+    {
+      "tag": "apology",
+      "patterns": [
+        "Sorry",
+        "My bad",
+        "Apologies",
+        "I apologize"
+      ],
+      "responses": [
+        "No worries! How can I assist you now?",
+        "All good. Let's continue—what do you need help with?"
+      ]
+    },
+    {
+      "tag": "clarify_followup",
+      "patterns": [
+        "What do you mean?",
+        "Can you clarify?",
+        "Explain more",
+        "Tell me more",
+        "Example please"
+      ],
+      "responses": [
+        "Sure! Could you tell me which part you want more details about?",
+        "Happy to explain—what exactly should I clarify?"
+      ]
+    },
+    {
+      "tag": "smalltalk_emojis_slang",
+      "patterns": [
+        "lol",
+        "lmao",
+        "rofl",
+        ":)",
+        ":D",
+        "😂",
+        "👌",
+        "👍",
+        "👀",
+        "brb",
+        "gtg",
+        "idk",
+        "imo",
+        "btw",
+        "np"
+      ],
+      "responses": [
+        "😄 Got it!",
+        "👍",
+        "No problem!"
+      ]
+    },
+    {
+      "tag": "feedback_positive",
+      "patterns": [
+        "This is helpful",
+        "Nice answer",
+        "Great help",
+        "Works for me"
+      ],
+      "responses": [
+        "Glad it helped! Anything else?",
+        "Awesome! Need help with something else?"
+      ]
+    },
+    {
+      "tag": "feedback_negative",
+      "patterns": [
+        "This didn't help",
+        "Not useful",
+        "Wrong answer",
+        "Doesn't work"
+      ],
+      "responses": [
+        "Thanks for the feedback. Tell me what's missing and I’ll try again.",
+        "Sorry about that. Could you share more details so I can help better?"
+      ]
+    },
+    {
+      "tag": "bug_report",
+      "patterns": [
+        "I found a bug",
+        "Bot is broken",
+        "Something isn't working",
+        "Report issue"
+      ],
+      "responses": [
+        "Thanks for reporting! Please describe the issue and steps to reproduce it.",
+        "I'll pass this along. Tell me what went wrong and where you saw it."
+      ]
+    },
+    {
+      "tag": "feature_request",
+      "patterns": [
+        "I have a suggestion",
+        "Feature request",
+        "Can you add this?",
+        "New feature idea"
+      ],
+      "responses": [
+        "Great idea! Share the feature you'd like and how it would help.",
+        "Thanks—describe the feature and I'll forward it to the team."
+      ]
+    },
+    {
+      "tag": "quote_motivation",
+      "patterns": [
+        "Motivate me",
+        "Give me a quote",
+        "Inspiration please",
+        "Motivational quote"
+      ],
+      "responses": [
+        "Believe you can and you're halfway there.",
+        "Small steps every day lead to big results.",
+        "Progress, not perfection. You've got this!"
+      ]
+    },
+    {
+      "tag": "study_tips",
+      "patterns": [
+        "Study tips",
+        "How to focus?",
+        "Improve productivity",
+        "How to avoid procrastination?"
+      ],
+      "responses": [
+        "Try Pomodoro: 25 minutes study + 5 minutes break—repeat 4 times.",
+        "Plan your day with 3 priorities and remove distractions.",
+        "Teach the topic to someone else to cement understanding."
+      ]
+    },
+    {
+      "tag": "define_placeholder",
+      "patterns": [
+        "Define [term]",
+        "What is [term]?",
+        "Explain [term]"
+      ],
+      "responses": [
+        "Definition for [term]: [definition].",
+        "[term]: [definition]."
+      ]
+    },
+    {
+      "tag": "calculator_placeholder",
+      "patterns": [
+        "Calculate [expression]",
+        "What is [a] plus [b]?",
+        "Solve [expression]"
+      ],
+      "responses": [
+        "The result is [result].",
+        "Answer: [result]."
+      ]
+    },
+    {
+      "tag": "weather_placeholder",
+      "patterns": [
+        "Weather in [city]",
+        "Is it raining?",
+        "Forecast today"
+      ],
+      "responses": [
+        "Current weather for [city]: [conditions], [temp]°C.",
+        "Forecast: [summary]."
+      ]
+    },
+    {
+      "tag": "translation_placeholder",
+      "patterns": [
+        "Translate [text] to [language]",
+        "How to say [text] in [language]?"
+      ],
+      "responses": [
+        "Translation: [translation].",
+        "In [language]: [translation]."
+      ]
+    },
+    {
+      "tag": "language_change",
+      "patterns": [
+        "Speak Hindi",
+        "Talk in English",
+        "Change language",
+        "Hinglish please"
+      ],
+      "responses": [
+        "I can reply in English or Hinglish. Batao kis language mein help chahiye?",
+        "Language set preference noted. I'll try to respond accordingly."
+      ]
+    },
+    {
+      "tag": "profanity_safe",
+      "patterns": [
+        "WTF",
+        "What the hell",
+        "Damn",
+        "Shut up"
+      ],
+      "responses": [
+        "Let's keep it respectful. How can I help you with college-related queries?",
+        "I'm here to help—let's keep the conversation friendly."
+      ]
+    },
+    {
+      "tag": "onboarding_welcome",
+      "patterns": [
+        "New here",
+        "First time",
+        "How to start?",
+        "Getting started"
+      ],
+      "responses": [
+        "Welcome! Ask me about fees, exams, schedules, or campus facilities.",
+        "Start by asking: 'exam schedule', 'fee due', 'register courses', or 'contact professor'."
+      ]
+    },
+    {
+      "tag": "chitchat_how_are_you",
+      "patterns": [
+        "How's it going?",
+        "How are you doing?",
+        "How are you?"
+      ],
+      "responses": [
+        "I'm doing great and ready to help!",
+        "All good here. How can I assist you today?"
+      ]
+    },
+    {
+      "tag": "chitchat_whats_new",
+      "patterns": [
+        "What's new?",
+        "Anything new?",
+        "What's happening?"
+      ],
+      "responses": [
+        "I'm here 24x7 to help with your queries!",
+        "Nothing much—just ready to help you with college info."
+      ]
+    },
+    {
+      "tag": "game_coin_flip",
+      "patterns": [
+        "Flip a coin",
+        "Heads or tails",
+        "Coin toss"
+      ],
+      "responses": [
+        "It's [Heads/Tails]!",
+        "Toss result: [Heads/Tails]."
+      ]
+    },
+    {
+      "tag": "game_dice_roll",
+      "patterns": [
+        "Roll a die",
+        "Roll dice",
+        "Dice please"
+      ],
+      "responses": [
+        "You rolled a [1-6].",
+        "Result: [1-6]."
+      ]
+    }
+    ,
+    {
+      "tag": "hi_greeting",
+      "patterns": [
+        "Namaste",
+        "Namaskar",
+        "Pranam",
+        "नमस्ते",
+        "हाय",
+        "कैसे हो?",
+        "Kya haal hai?",
+        "Kaise ho?",
+        "Hey yaar",
+        "Hello bhai",
+        "Hello didi"
+      ],
+      "responses": [
+        "Namaste! Main aapki madad ke liye yahan hoon. Kaise help karun?",
+        "Hello! College se judi kis baat mein madad chahiye?",
+        "Hi! Aap apna sawal pooch sakte hain—fees, exams, timetable, ya kuch aur."
+      ]
+    },
+    {
+      "tag": "hi_goodbye",
+      "patterns": [
+        "Alvida",
+        "Bye bye",
+        "Chalta hoon",
+        "चलता हूँ",
+        "चलती हूँ",
+        "Phir milte hain",
+        "Milte hain",
+        "Bas itna hi"
+      ],
+      "responses": [
+        "Dhanyavaad! Jab bhi zarurat ho, wapas aa jana.",
+        "Theek hai, apna khayal rakhna!",
+        "Phir milte hain! All the best."
+      ]
+    },
+    {
+      "tag": "hi_thanks",
+      "patterns": [
+        "Shukriya",
+        "Dhanyavaad",
+        "Thanks yaar",
+        "Bahut shukriya",
+        "Thank you ji",
+        "Thanks bhai"
+      ],
+      "responses": [
+        "Aapka swagat hai!",
+        "Khushi hui madad karke! Aur kuch?",
+        "Anytime! Aur koi sawaal ho to poochiye."
+      ]
+    },
+    {
+      "tag": "hi_affirmation",
+      "patterns": [
+        "Theek hai",
+        "Thik hai",
+        "Sahi hai",
+        "Achha hai",
+        "Haan",
+        "Haan ji",
+        "Bilkul",
+        "Chalega"
+      ],
+      "responses": [
+        "Great! Aur kisi cheez mein madad chahiye?",
+        "Sahi baat. Ab aage kya karna chahoge?"
+      ]
+    },
+    {
+      "tag": "hi_help_general",
+      "patterns": [
+        "Madad chahiye",
+        "Help karoge?",
+        "Kya kar sakte ho?",
+        "Tum kya karte ho?",
+        "Kaise madad karoge?",
+        "Options dikhayo"
+      ],
+      "responses": [
+        "Main fees, exams, attendance, timetable, library, placements aur campus info mein madad karta hoon.",
+        "Aap pooch sakte hain: 'exam dates', 'fee kitni bachi', 'library timing', 'Wi‑Fi kaise connect karein'."
+      ]
+    },
+    {
+      "tag": "hi_apology",
+      "patterns": [
+        "Sorry yaar",
+        "Maaf kijiye",
+        "Mujhse galti ho gayi",
+        "Shama kijiye"
+      ],
+      "responses": [
+        "Koi baat nahi! Ab batayein main kaise help karun?",
+        "It's okay! Aage badhte hain—kis cheez ki madad chahiye?"
+      ]
+    },
+    {
+      "tag": "hi_mood",
+      "patterns": [
+        "Mera mood kharab hai",
+        "Thak gaya hoon",
+        "Thak gayi hoon",
+        "Tension ho rahi hai",
+        "Dil udaas hai",
+        "Bore ho raha hoon"
+      ],
+      "responses": [
+        "Sorry yeh sun kar. Thoda break lo, paani piyo, aur halka sa walk kar lo.",
+        "Deep breath lo—main academics, schedule ya deadlines mein help kar sakta hoon.",
+        "Agar chaho to main study tips ya motivation share kar sakta hoon."
+      ]
+    },
+    {
+      "tag": "hi_smalltalk",
+      "patterns": [
+        "Kya chal raha hai?",
+        "Kya scene hai?",
+        "Aur batao",
+        "Sab theek?",
+        "Kaisa chal raha?",
+        "Hello ji"
+      ],
+      "responses": [
+        "Sab badhiya! Aap batao—kis cheez ki info chahiye?",
+        "Main yahin hoon 24x7. College ke sawal poochiye."
+      ]
+    },
+    {
+      "tag": "hi_language_change",
+      "patterns": [
+        "Hindi mein bolo",
+        "Hinglish mein baat karo",
+        "English theek hai",
+        "Language change karo"
+      ],
+      "responses": [
+        "Theek hai! Main Hindi ya Hinglish mein reply kar sakta hoon. Aapki preference?",
+        "Noted. Ab se main aapki pasand ki language mein jawaab dunga."
+      ]
+    }
+  ]
+}

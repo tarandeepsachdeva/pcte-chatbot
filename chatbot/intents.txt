@@ -1,0 +1,288 @@
+{
+"intents": [
+    {
+      "tag": "greeting",
+      "patterns": [
+        "Hi",
+        "Hey",
+        "Hello",
+        "Good morning",
+        "Good afternoon",
+        "Good evening",
+        "Is anyone there?",
+        "How are you?"
+      ],
+      "responses": [
+        "Hello! Welcome to the College Helpdesk. How can I assist you today?",
+        "Hi there! I'm here to help you with your college queries. What do you need?",
+        "Hey! Welcome to the student helpdesk. How can I help you?"
+      ]
+    },
+    {
+      "tag": "goodbye",
+      "patterns": [
+        "Bye",
+        "See you later",
+        "Goodbye",
+        "Have a nice day",
+        "Thank you, bye",
+        "That's all"
+      ],
+      "responses": [
+        "Goodbye! Feel free to reach out if you have more questions.",
+        "Have a great day! Don't hesitate to ask if you need help again.",
+        "See you later! Good luck with your studies!"
+      ]
+    },
+    {
+      "tag": "thanks",
+      "patterns": [
+        "Thanks",
+        "Thank you",
+        "That's helpful",
+        "Thank's a lot!",
+        "Appreciate it",
+        "Thanks for helping"
+      ],
+      "responses": [
+        "You're welcome!",
+        "Happy to help!",
+        "Anytime! Feel free to ask more questions.",
+        "Glad I could help!"
+      ]
+    },
+    {
+      "tag": "fee_inquiry",
+      "patterns": [
+        "How much fee do I have to pay?",
+        "What is my remaining fee?",
+        "Can you check my fee balance?",
+        "Do I have any pending fees?",
+        "What's my fee status?",
+        "Fee payment",
+        "Tuition fee",
+        "How much do I owe?",
+        "Fee structure",
+        "Payment due date"
+      ],
+      "responses": [
+        "Your remaining fee balance is ₹[amount]. The due date is [date]. You can pay online through the student portal.",
+        "You have ₹[amount] pending in fees. Please pay by [date] to avoid late fees.",
+        "Let me check your fee status... Your remaining balance is ₹[amount]. Payment can be made at the accounts office or online."
+      ]
+    },
+    {
+      "tag": "academic_records",
+      "patterns": [
+        "What is my attendance?",
+        "Can you tell me my grades?",
+        "What are my current courses?",
+        "Show my academic record",
+        "What's my enrollment status?",
+        "My marks",
+        "CGPA",
+        "Semester results",
+        "Academic performance",
+        "Grade report"
+      ],
+      "responses": [
+        "Your attendance for this semester is [percentage]%. You need to maintain at least 75% to be eligible for exams.",
+        "Here are your current grades: [list of grades]. Your CGPA is [CGPA].",
+        "You are enrolled in the following courses: [list of courses]. All assignments are up to date.",
+        "Your enrollment status is [status]. You're in good academic standing."
+      ]
+    },
+    {
+      "tag": "exam_schedule",
+      "patterns": [
+        "When are the exams?",
+        "Exam schedule",
+        "Mid semester exam dates",
+        "Final exam timetable",
+        "When is my exam?",
+        "Exam dates",
+        "Test schedule",
+        "When do exams start?"
+      ],
+      "responses": [
+        "Mid-semester exams will be held from [start_date] to [end_date]. Check your student portal for detailed schedule.",
+        "Final exams begin on [date]. The complete timetable is available on the college website.",
+        "Your exam schedule: [list of exams with dates]. Don't forget to bring your ID card and admit card."
+      ]
+    },
+    {
+      "tag": "assignment_deadlines",
+      "patterns": [
+        "When is the assignment due?",
+        "Assignment deadline",
+        "Last date to submit",
+        "Project submission date",
+        "When should I submit my work?",
+        "Assignment due dates",
+        "Submission deadline"
+      ],
+      "responses": [
+        "Assignments for this month are due on [date]. Late submissions will have marks deducted.",
+        "Your next assignment deadline is [date]. Make sure to submit through the online portal.",
+        "Project submissions are due by [date]. Don't forget to include all required documents."
+      ]
+    },
+    {
+      "tag": "faculty_contact",
+      "patterns": [
+        "How can I contact my professor?",
+        "Faculty contact details",
+        "Professor email",
+        "Teacher contact",
+        "How to reach my teacher?",
+        "Faculty office hours",
+        "When can I meet my professor?"
+      ],
+      "responses": [
+        "You can contact your professors during their office hours: [list of faculty with office hours].",
+        "Faculty contact details are available on the college website. You can also email them directly.",
+        "Office hours for faculty members: [schedule]. You can also schedule appointments through the portal."
+      ]
+    },
+    {
+      "tag": "library_info",
+      "patterns": [
+        "Library timings",
+        "When is the library open?",
+        "How many books can I borrow?",
+        "Library rules",
+        "Can I study in the library?",
+        "Library membership",
+        "Book return date"
+      ],
+      "responses": [
+        "Library is open from 8:00 AM to 8:00 PM on weekdays, 9:00 AM to 5:00 PM on weekends.",
+        "You can borrow up to 5 books for 14 days. Late returns will incur fines.",
+        "Library membership is automatic for all enrolled students. You can study in the reading rooms during open hours."
+      ]
+    },
+    {
+      "tag": "campus_facilities",
+      "patterns": [
+        "Where is the cafeteria?",
+        "Sports facilities",
+        "Computer lab timings",
+        "Medical center",
+        "Transportation",
+        "Parking facilities",
+        "WiFi access",
+        "Campus map"
+      ],
+      "responses": [
+        "The cafeteria is located in Block A, ground floor. It's open from 8:00 AM to 8:00 PM.",
+        "Sports facilities include a gym, basketball court, and football ground. Equipment can be borrowed from the sports office.",
+        "Computer labs are open from 9:00 AM to 6:00 PM. WiFi is available throughout the campus with your student login."
+      ]
+    },
+    {
+      "tag": "course_registration",
+      "patterns": [
+        "How to register for courses?",
+        "Course registration process",
+        "Add drop courses",
+        "Change my courses",
+        "Elective selection",
+        "Course enrollment",
+        "Registration deadline"
+      ],
+      "responses": [
+        "Course registration opens on [date]. You can register online through the student portal or visit the academic office.",
+        "To add/drop courses, submit the form to the academic office within the first two weeks of the semester.",
+        "Elective course selection is available until [date]. Check the course catalog for available options."
+      ]
+    },
+    {
+      "tag": "scholarship_financial_aid",
+      "patterns": [
+        "Scholarship application",
+        "Financial aid",
+        "Merit scholarship",
+        "Need based scholarship",
+        "How to apply for scholarship?",
+        "Scholarship eligibility",
+        "Education loan",
+        "Fee waiver"
+      ],
+      "responses": [
+        "Scholarship applications are now open. You can apply online through the financial aid portal.",
+        "Merit scholarships are available for students with CGPA above 8.5. Applications close on [date].",
+        "Need-based scholarships require income certificates and other documents. Contact the financial aid office for details."
+      ]
+    },
+    {
+      "tag": "student_services",
+      "patterns": [
+        "Student ID card",
+        "Transcript request",
+        "Bonafide certificate",
+        "Migration certificate",
+        "Character certificate",
+        "How to get documents?",
+        "Document verification"
+      ],
+      "responses": [
+        "You can request documents like transcripts and certificates from the student services office. Processing takes 3-5 working days.",
+        "For ID card reissue, visit the student services office with a written application and ₹100 fee.",
+        "Bonafide certificates are issued immediately. For other documents, apply online and collect after 3 days."
+      ]
+    },
+    {
+      "tag": "technical_support",
+      "patterns": [
+        "Portal login problem",
+        "Can't access student portal",
+        "Password reset",
+        "Email not working",
+        "Upload assignment issue",
+        "System problem",
+        "IT support",
+        "Technical issue"
+      ],
+      "responses": [
+        "For portal login issues, try resetting your password using the 'Forgot Password' link. Contact IT support if problems persist.",
+        "If you can't upload assignments, check file size (max 10MB) and format (PDF/DOC). Contact IT helpdesk at [number].",
+        "Technical support is available at [location] from 9:00 AM to 6:00 PM, or email [email] for urgent issues."
+      ]
+    },
+    {
+      "tag": "academic_calendar",
+      "patterns": [
+        "Academic calendar",
+        "Holiday list",
+        "Semester break",
+        "When does semester start?",
+        "College holidays",
+        "Academic schedule",
+        "Important dates"
+      ],
+      "responses": [
+        "The academic calendar is available on the college website. Key dates: Semester starts [date], mid-semester break [dates], final exams [dates].",
+        "Upcoming holidays: [list of holidays]. Regular classes resume on [date].",
+        "Important academic dates: Registration [date], exams [dates], results [date]."
+      ]
+    },
+    {
+      "tag": "placement_career",
+      "patterns": [
+        "Placement opportunities",
+        "Career guidance",
+        "Job placement",
+        "Internship opportunities",
+        "Resume building",
+        "Interview preparation",
+        "Career counseling",
+        "Placement statistics"
+      ],
+      "responses": [
+        "Placement season begins in [month]. Register with the placement cell and attend pre-placement talks.",
+        "Career counseling sessions are held every Friday. You can book appointments through the career center.",
+        "Internship opportunities are posted regularly on the placement portal. Check for updates weekly."
+      ]
+    }
+  ]
+}

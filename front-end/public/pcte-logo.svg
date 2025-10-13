@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="200" height="200" viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg">
+  <!-- Background circle -->
+  <circle cx="100" cy="80" r="60" fill="#C41E3A" stroke="#C41E3A"/>
+  
+  <!-- Geometric white shapes inside circle -->
+  <rect x="75" y="60" width="8" height="40" fill="white"/>
+  <polygon points="88,60 110,60 108,65 90,65" fill="white"/>
+  <polygon points="88,70 115,70 113,75 90,75" fill="white"/>
+  <polygon points="88,80 120,80 118,85 90,85" fill="white"/>
+  <polygon points="88,90 115,90 113,95 90,95" fill="white"/>
+  
+  <!-- PCTE text -->
+  <text x="100" y="170" font-family="Arial, sans-serif" font-size="36" font-weight="bold" text-anchor="middle" fill="#2D1B69">PCTE</text>
+  
+  <!-- Ready to Evolve text (curved around top) -->
+  <path id="curve" d="M 45,80 A 55,55 0 0,1 155,80" fill="none" stroke="none"/>
+  <text font-family="Arial, sans-serif" font-size="10" fill="#2D1B69" text-anchor="middle">
+    <textPath href="#curve" startOffset="50%">READY TO EVOLVE</textPath>
+  </text>
+</svg>
