@@ -26,11 +26,11 @@ export const ChatArea: React.FC<ChatAreaProps> = ({ messages, isTyping = false }
   }, [messages, isTyping]);
 
   return (
-    <div className="flex-1 overflow-y-auto bg-gray-50 p-6">
+    <div className="flex-1 overflow-y-auto bg-gray-50 p-3 sm:p-6">
       {messages.length === 0 ? (
         <div className="flex flex-col items-center justify-center h-full text-gray-400">
           <MessageSquare className="w-16 h-16 mb-4 opacity-50" />
-          <h3 className="text-lg font-medium mb-2">Welcome to PCTE Helpdesk Chatbot</h3>
+          <h3 className="text-lg font-medium mb-2 text-center">Welcome to PCTE Helpdesk Chatbot</h3>
           <p className="text-center max-w-md">
             Hi! I'm your virtual assistant from PCTE (Punjab College of Technical Education). 
             I'm here to help you with any questions about courses, schedules, campus services, 

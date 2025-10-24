@@ -24,7 +24,7 @@ export const ChatBubble: React.FC<ChatBubbleProps> = ({ message }) => {
         </div>
       )}
       
-      <div className={`max-w-xs lg:max-w-md xl:max-w-lg ${isUser ? 'order-1' : 'order-2'}`}>
+      <div className={`max-w-[80vw] sm:max-w-md md:max-w-lg ${isUser ? 'order-1' : 'order-2'}`}>
         <div
           className={`px-4 py-3 rounded-2xl shadow-sm ${
             isUser

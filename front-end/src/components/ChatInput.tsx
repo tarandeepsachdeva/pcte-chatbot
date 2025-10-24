@@ -24,7 +24,7 @@ export const ChatInput: React.FC<ChatInputProps> = ({ onSendMessage, disabled = 
   };
 
   return (
-    <div className="p-4 bg-white border-t border-gray-200">
+    <div className="p-3 sm:p-4 bg-white border-t border-gray-200">
       <div className="flex space-x-3 items-end">
         <div className="flex-1">
           <input

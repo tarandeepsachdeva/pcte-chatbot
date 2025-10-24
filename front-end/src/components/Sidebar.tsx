@@ -89,7 +89,7 @@ export const Sidebar: React.FC<SidebarProps> = ({
   onRenameChat
 }) => {
   return (
-    <div className="w-80 bg-white border-r border-gray-200 flex flex-col h-full">
+    <div className="w-full md:w-80 bg-white border-r border-gray-200 flex flex-col h-full">
       {}
       <div className="p-6 border-b border-gray-100">
         <div className="flex items-center space-x-3 mb-4">
