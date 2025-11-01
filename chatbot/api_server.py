@@ -13,6 +13,12 @@ from dotenv import load_dotenv
 # Load environment variables from .env file
 load_dotenv()
 
+# Timezone support (uses IANA zone names like "Asia/Kolkata")
+try:
+    from zoneinfo import ZoneInfo  # Python 3.9+
+except Exception:
+    ZoneInfo = None  # Fallback handled at runtime
+
 app = Flask(__name__)
 # Enable CORS for all routes to allow frontend access
 CORS(app, origins=["http://localhost:5173", "http://127.0.0.1:5173"])
@@ -50,6 +56,44 @@ model = NeuralNet(input_size, hidden_size, output_size).to(device)
 model.load_state_dict(model_state)
 model.eval()
 
+# Helper to get "now" in the desired timezone
+# Priority: request-provided tz -> TIMEZONE env -> Asia/Kolkata -> system local
+# Returns a timezone-aware datetime when possible
+
+def get_now(tz_name=None):
+    tz = None
+    # Request-provided or explicit timezone
+    if tz_name and ZoneInfo:
+        try:
+            tz = ZoneInfo(tz_name)
+        except Exception:
+            tz = None
+
+    # Environment variable fallback
+    if tz is None:
+        env_tz = os.getenv('TIMEZONE')
+        if env_tz and ZoneInfo:
+            try:
+                tz = ZoneInfo(env_tz)
+            except Exception:
+                tz = None
+
+    # Preferred default for this project (PCTE in India)
+    if tz is None and ZoneInfo:
+        try:
+            tz = ZoneInfo('Asia/Kolkata')
+        except Exception:
+            tz = None
+
+    if tz is not None:
+        return datetime.now(tz)
+
+    # Last-resort fallbacks
+    try:
+        return datetime.now().astimezone()
+    except Exception:
+        return datetime.now()
+
 def should_use_gemini(user_message):
     """
     Check if the query should be routed directly to Gemini AI
@@ -66,7 +110,7 @@ def should_use_gemini(user_message):
     user_lower = user_message.lower()
     return any(keyword in user_lower for keyword in gemini_keywords)
 
-def get_local_response(user_message):
+def get_local_response(user_message, tz_name=None):
     """
     Get response from local trained model and intents
     """
@@ -89,7 +133,7 @@ def get_local_response(user_message):
         confidence_threshold = 0.8
         if confidence >= confidence_threshold:
             # Handle dynamic responses for date/time/day
-            now = datetime.now()
+            now = get_now(tz_name)
             if tag == 'current_time':
                 return f"The current time is {now.strftime('%I:%M %p')}", confidence, "local"
             if tag == 'current_date':
@@ -149,6 +193,15 @@ def chat():
                 'status': 'error'
             }), 400
         
+        # Determine preferred timezone from client or environment
+        tz_name = None
+        if isinstance(data, dict):
+            tz_val = data.get('timezone')
+            if isinstance(tz_val, str):
+                tz_name = tz_val
+        if not tz_name:
+            tz_name = request.headers.get('X-Timezone')
+        
         # Step 1: Check if query should go directly to Gemini
         if should_use_gemini(user_message):
             final_response, response_source = get_gemini_response(user_message)
@@ -156,7 +209,7 @@ def chat():
             source = "gemini"
         else:
             # Step 2: Try local model first
-            local_response, confidence, source = get_local_response(user_message)
+            local_response, confidence, source = get_local_response(user_message, tz_name)
             
             if local_response and confidence >= 0.8:
                 # Use local response if confidence is high enough
@@ -171,7 +224,7 @@ def chat():
         return jsonify({
             'message': final_response,
             'status': 'success',
-            'timestamp': datetime.now().isoformat(),
+            'timestamp': get_now(tz_name).isoformat(),
             'user_input': user_message,
             'response_source': response_source,
             'local_confidence': confidence if source == "local" else None,
@@ -191,7 +244,7 @@ def health_check():
     """
     return jsonify({
         'status': 'healthy',
-        'timestamp': datetime.now().isoformat(),
+'timestamp': get_now().isoformat(),
         'service': 'Chatbot API with Gemini'
     })
 
