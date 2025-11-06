@@ -151,12 +151,13 @@ export const useChatbot = () => {
     try {
       const response = await axios.post(API_URL, { message: text });
       const botResponseText = response.data.message;
+      const serverTimestamp = response.data.timestamp;
 
       const botResponse: Message = {
         id: `msg-${Date.now()}-bot`,
         text: botResponseText || "Sorry, I couldn't get a response.",
         sender: 'bot',
-        timestamp: new Date().toISOString() // Store full ISO string
+        timestamp: serverTimestamp || new Date().toISOString() // Use server timestamp if available
       };
 
       setChats(prevChats => prevChats.map(chat =>

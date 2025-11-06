@@ -92,6 +92,9 @@ def chat():
                 'status': 'error'
             }), 400
         
+        # Get current timestamp in ISO format
+        current_timestamp = datetime.utcnow().isoformat() + 'Z'  # 'Z' indicates UTC time
+        
         # Check if query should go directly to Gemini
         if should_use_gemini(user_message):
             final_response, response_source = get_gemini_response(user_message)
@@ -109,7 +112,7 @@ def chat():
         return jsonify({
             'message': final_response,
             'status': 'success',
-            'timestamp': datetime.now().isoformat(),
+            'timestamp': current_timestamp,  # Include server timestamp in the response
             'user_input': user_message,
             'response_source': response_source,
             'local_confidence': confidence if response_source == "local_intents" else None,
