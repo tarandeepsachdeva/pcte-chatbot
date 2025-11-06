@@ -22,7 +22,28 @@ const API_URL = import.meta.env.VITE_API_URL ||
   (import.meta.env.PROD ? '/api/chat' : 'http://localhost:8000/chat');
 
 const formatTime = (date: Date): string => {
-  return date.toLocaleTimeString([], { hour: '2-digit', minute: '2-digit' });
+  const now = new Date();
+  const diffInDays = Math.floor((now.getTime() - date.getTime()) / (1000 * 60 * 60 * 24));
+  
+  if (diffInDays === 0) {
+    // Today - show only time
+    return date.toLocaleTimeString([], { hour: '2-digit', minute: '2-digit' });
+  } else if (diffInDays === 1) {
+    // Yesterday - show 'Yesterday' and time
+    return `Yesterday, ${date.toLocaleTimeString([], { hour: '2-digit', minute: '2-digit' })}`;
+  } else if (diffInDays < 7) {
+    // Within a week - show day name and time
+    return `${date.toLocaleDateString([], { weekday: 'short' })}, ${date.toLocaleTimeString([], { hour: '2-digit', minute: '2-digit' })}`;
+  } else {
+    // Older than a week - show date and time
+    return date.toLocaleString([], { 
+      year: 'numeric',
+      month: 'short', 
+      day: 'numeric',
+      hour: '2-digit', 
+      minute: '2-digit' 
+    });
+  }
 };
 
 const generateChatTitle = (message: string): string => {
