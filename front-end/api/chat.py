@@ -4,7 +4,13 @@ import google.generativeai as genai
 import os
 import json
 import random
+import logging
 from datetime import datetime, timedelta
+from .pdf_processor import get_pdf_processor
+
+# Configure logging
+logging.basicConfig(level=logging.INFO)
+logger = logging.getLogger(__name__)
 
 app = Flask(__name__)
 CORS(app)
@@ -58,11 +64,23 @@ def should_use_gemini(message):
     ]
     return any(keyword in message.lower() for keyword in gemini_keywords)
 
-def get_gemini_response(message):
+def get_gemini_response(message, use_pdf_context=True):
     try:
-        prompt = f"""You are a helpful college assistant chatbot for PCTE (Punjab College of Technical Education). 
-        Respond to the following question in a friendly and informative way. 
-        Keep your response concise and helpful.
+        context = ""
+        if use_pdf_context:
+            try:
+                pdf_processor = get_pdf_processor()
+                context = pdf_processor.get_context_for_query(message)
+            except Exception as e:
+                logger.error(f"Error getting PDF context: {str(e)}")
+                context = "[PDF context not available]"
+        
+        prompt = f"""You are a helpful college assistant chatbot for PCTE (Punjab College of Technical Education).
+        Use the context below to answer the user's question. If the context doesn't contain the answer,
+        use your general knowledge but indicate that the information might not be specific to PCTE.
+        
+        Context:
+        {context}
         
         User question: {message}
         
@@ -71,7 +89,8 @@ def get_gemini_response(message):
         response = gemini_model.generate_content(prompt)
         return response.text.strip(), "gemini"
     except Exception as e:
-        return "I'm sorry, I'm having trouble processing your request right now. Please try again later.", "gemini"
+        logger.error(f"Error in get_gemini_response: {str(e)}")
+        return "I'm sorry, I'm having trouble processing your request right now. Please try again later.", "geminy"
 
 @app.route('/api/chat', methods=['POST'])
 def chat():
@@ -80,8 +99,9 @@ def chat():
         
         if not data or 'message' not in data:
             return jsonify({
-                'error': 'Missing message field',
-                'status': 'error'
+                'error': 'No message provided',
+                'status': 'error',
+                'timestamp': datetime.utcnow().isoformat() + 'Z'
             }), 400
         
         user_message = data['message'].strip()
@@ -89,25 +109,30 @@ def chat():
         if not user_message:
             return jsonify({
                 'error': 'Message cannot be empty',
-                'status': 'error'
+                'status': 'error',
+                'timestamp': datetime.utcnow().isoformat() + 'Z'
             }), 400
         
         # Get current timestamp in ISO format
         current_timestamp = datetime.utcnow().isoformat() + 'Z'  # 'Z' indicates UTC time
         
-        # Check if query should go directly to Gemini
-        if should_use_gemini(user_message):
-            final_response, response_source = get_gemini_response(user_message)
-            confidence = 0.0
+        # Check if query is about PCTE (use PDF context)
+        is_about_pcte = any(term in user_message.lower() for term in 
+                           ['pcte', 'punjab college', 'admission', 'course', 'faculty', 'campus', 'fee', 'scholarship'])
+        
+        # Try local intents first for simple queries
+        local_response, source, confidence = get_local_response(user_message)
+        
+        if local_response and confidence >= 0.8:
+            final_response = local_response
+            response_source = source
         else:
-            # Try local intents first
-            local_response, source, confidence = get_local_response(user_message)
-            
-            if local_response and confidence >= 0.8:
-                final_response = local_response
-                response_source = "local_intents"
-            else:
-                final_response, response_source = get_gemini_response(user_message)
+            # Use Gemini with PDF context for PCTE-related queries
+            final_response, response_source = get_gemini_response(
+                user_message, 
+                use_pdf_context=is_about_pcte
+            )
+            confidence = 0.7  # Medium confidence for AI-generated responses
         
         return jsonify({
             'message': final_response,
