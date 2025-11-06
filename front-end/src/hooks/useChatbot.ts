@@ -21,7 +21,15 @@ interface Chat {
 const API_URL = import.meta.env.VITE_API_URL || 
   (import.meta.env.PROD ? '/api/chat' : 'http://localhost:8000/chat');
 
-const formatTime = (date: Date): string => {
+const formatTime = (dateInput: string | Date): string => {
+  // If input is a string, try to parse it into a Date object
+  const date = typeof dateInput === 'string' ? new Date(dateInput) : dateInput;
+  
+  // If date is invalid, return current time as fallback
+  if (isNaN(date.getTime())) {
+    return new Date().toISOString();
+  }
+  
   const now = new Date();
   const diffInDays = Math.floor((now.getTime() - date.getTime()) / (1000 * 60 * 60 * 24));
   
@@ -94,12 +102,13 @@ export const useChatbot = () => {
   }, [chats, activeChat]);
 
   const createNewChat = useCallback((): string => {
+    const currentDate = new Date();
     const newChatId = `chat-${Date.now()}`;
     const newChat: Chat = {
       id: newChatId,
       title: 'New Conversation',
       lastMessage: '',
-      timestamp: formatTime(new Date()),
+      timestamp: currentDate.toISOString(),
       messages: []
     };
     
@@ -117,11 +126,12 @@ export const useChatbot = () => {
       chatId = createNewChat();
     }
 
+    const currentDate = new Date();
     const userMessage: Message = {
       id: `msg-${Date.now()}`,
       text,
       sender: 'user',
-      timestamp: formatTime(new Date())
+      timestamp: currentDate.toISOString() // Store full ISO string
     };
 
     setChats(prevChats => prevChats.map(chat =>
@@ -146,7 +156,7 @@ export const useChatbot = () => {
         id: `msg-${Date.now()}-bot`,
         text: botResponseText || "Sorry, I couldn't get a response.",
         sender: 'bot',
-        timestamp: formatTime(new Date())
+        timestamp: new Date().toISOString() // Store full ISO string
       };
 
       setChats(prevChats => prevChats.map(chat =>
