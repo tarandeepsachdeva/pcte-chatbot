@@ -6,6 +6,6 @@
     "build": "cd front-end && npm install && npm run build"
   },
   "engines": {
-    "node": "18.x"
+    "node": ">=20.0.0 <21.0.0"
   }
 }
