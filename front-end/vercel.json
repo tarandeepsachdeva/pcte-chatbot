@@ -13,8 +13,9 @@
       "src": "api/chat.py",
       "use": "@vercel/python",
       "config": {
-        "maxLambdaSize": "15mb",
-        "memory": 3008
+        "maxLambdaSize": "50mb",
+        "memory": 3008,
+        "includeFiles": ["pcte_brochure.pdf"]
       }
     }
   ],
@@ -24,6 +25,13 @@
     { "src": "/(.*)", "dest": "/index.html" }
   ],
   "env": {
-    "PYTHON_VERSION": "3.9"
+    "PYTHON_VERSION": "3.9",
+    "NODE_VERSION": "18.x",
+    "NODE_ENV": "production"
+  },
+  "build": {
+    "env": {
+      "NODE_OPTIONS": "--max-old-space-size=2048"
+    }
   }
 }

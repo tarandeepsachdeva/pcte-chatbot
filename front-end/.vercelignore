@@ -1,0 +1,65 @@
+# Ignore everything by default
+*
+# But include these specific files
+!api/chat.py
+!requirements.txt
+!pcte_brochure.pdf
+!vercel.json
+!package.json
+!package-lock.json
+!tsconfig.json
+!vite.config.ts
+!index.html
+!src/
+!public/
+
+# Node.js specific
+node_modules/
+.next/
+.cache/
+coverage/
+dist/
+build/
+
+# Python specific
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+build/
+develop-eggs/
+dist/
+downloads/
+eggs/
+.eggs/
+lib64/
+parts/
+sdist/
+var/
+wheels/
+*.egg-info/
+.installed.cfg
+*.egg
+
+# Environment files
+.env
+.env.local
+.env.development
+.env.test
+.env.production
+
+# Debug logs
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# IDE specific files
+.idea/
+.vscode/
+*.swp
+*.swo
+
+# Local development
+.DS_Store
+Thumbs.db
