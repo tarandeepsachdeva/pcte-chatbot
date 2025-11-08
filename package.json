@@ -3,9 +3,6 @@
   "version": "1.0.0",
   "private": true,
   "scripts": {
-    "build": "echo 'Build is handled by Vercel configuration'"
-  },
-  "engines": {
-    "node": ">=20.0.0 <21.0.0"
+    "build": "echo 'Frontend build is handled by front-end/vercel.json'"
   }
 }
