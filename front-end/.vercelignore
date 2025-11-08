@@ -1,17 +1,48 @@
-# Ignore everything by default
+# Include all files by default
 *
-# But include these specific files
-!api/chat.py
-!requirements.txt
-!pcte_brochure.pdf
-!vercel.json
-!package.json
-!package-lock.json
-!tsconfig.json
-!vite.config.ts
-!index.html
-!src/
-!public/
+# Only exclude these specific directories and files
+.git
+.gitignore
+.vercel
+.env.local
+.env.development
+.env.test
+.env.production
+
+# Development files
+node_modules/
+.next/
+.cache/
+coverage/
+build/
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+build/
+dist/
+*.egg-info/
+.installed.cfg
+*.egg
+
+# Logs and databases
+*.log
+*.sql
+*.sqlite
+
+# Environment files
+.env
+
+# Editor directories and files
+.idea/
+.vscode/
+*.swp
+*.swo
+
+# Local development
+.DS_Store
+Thumbs.db
 
 # Node.js specific
 node_modules/
