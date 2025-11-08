@@ -5,22 +5,20 @@
       "src": "front-end/package.json",
       "use": "@vercel/static-build",
       "config": {
-        "distDir": "dist",
-        "buildCommand": "npm install && npm run build"
+        "distDir": "dist"
       }
     },
     {
       "src": "front-end/api/chat.py",
+      "use": "@vercel/python"
+    },
+    {
+      "src": "front-end/api/test.py",
       "use": "@vercel/python"
     }
   ],
   "routes": [
     { "src": "/api/(.*)", "dest": "/api/chat.py" },
     { "src": "/(.*)", "dest": "/front-end/dist/$1" }
-  ],
-  "functions": {
-    "front-end/api/chat.py": {
-      "runtime": "python3.9"
-    }
-  }
+  ]
 }
