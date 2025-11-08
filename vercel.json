@@ -1,9 +1,18 @@
 {
   "version": 2,
-  "buildCommand": "cd front-end && npm install && npm run build",
-  "outputDirectory": "front-end/dist",
   "builds": [
-    { "src": "front-end/api/chat.py", "use": "@vercel/python" }
+    {
+      "src": "front-end/package.json",
+      "use": "@vercel/static-build",
+      "config": {
+        "distDir": "dist",
+        "buildCommand": "npm install && npm run build"
+      }
+    },
+    {
+      "src": "front-end/api/chat.py",
+      "use": "@vercel/python"
+    }
   ],
   "routes": [
     { "src": "/api/(.*)", "dest": "/api/chat.py" },
