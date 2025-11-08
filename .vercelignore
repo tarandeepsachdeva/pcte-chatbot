@@ -1,16 +1,16 @@
-# Include all files by default
-*
-
-# Only exclude these specific directories and files
+# Exclude development and system files
 .git
 .gitignore
 .vercel
+
+# Environment files (handled by Vercel)
+.env
 .env.local
 .env.development
 .env.test
 .env.production
 
-# Development files
+# Development directories
 node_modules/
 .next/
 .cache/
@@ -21,8 +21,6 @@ __pycache__/
 *$py.class
 *.so
 .Python
-build/
-dist/
 *.egg-info/
 .installed.cfg
 *.egg
@@ -31,9 +29,6 @@ dist/
 *.log
 *.sql
 *.sqlite
-
-# Environment files
-.env
 
 # Editor directories and files
 .idea/
@@ -44,3 +39,24 @@ dist/
 # Local development
 .DS_Store
 Thumbs.db
+
+# Python cache and build files
+.pytest_cache/
+.mypy_cache/
+*.pyd
+*.pyo
+*.pyd
+
+# Distribution / packaging
+dist/
+build/
+*.egg-info/
+
+# Virtual environments
+venv/
+env/
+ENV/
+
+# Local development
+.venv/
+.venv*/
