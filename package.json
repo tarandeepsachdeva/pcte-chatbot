@@ -2,9 +2,6 @@
   "name": "pcte-chatbot",
   "version": "1.0.0",
   "private": true,
-  "scripts": {
-    "build": "cd front-end && npm install && npm run build"
-  },
   "engines": {
     "node": ">=20.0.0"
   }
