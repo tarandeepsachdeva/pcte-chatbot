@@ -3,6 +3,7 @@
   "version": "1.0.0",
   "private": true,
   "scripts": {
-    "build": "echo 'Build is handled by Vercel configuration'"
+    "build": "echo 'Build is handled by Vercel configuration'",
+    "vercel-build": "cd front-end && npm install && npm run build"
   }
 }

@@ -2,11 +2,8 @@
   "version": 2,
   "builds": [
     {
-      "src": "front-end/package.json",
-      "use": "@vercel/static-build",
-      "config": {
-        "distDir": "dist"
-      }
+      "src": "package.json",
+      "use": "@vercel/static-build"
     },
     {
       "src": "front-end/api/chat.py",
