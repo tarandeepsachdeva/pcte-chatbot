@@ -5,7 +5,8 @@
       "src": "front-end/package.json",
       "use": "@vercel/static-build",
       "config": {
-        "distDir": "dist"
+        "distDir": "dist",
+        "zeroConfig": true
       }
     },
     {
@@ -15,12 +16,13 @@
   ],
   "routes": [
     { "src": "/api/(.*)", "dest": "/api/chat.py" },
-    { "src": "/(.*)", "dest": "/front-end/dist/index.html" }
+    { "src": "/(.*)", "dest": "/front-end/dist/$1" }
   ],
   "build": {
     "env": {
       "NODE_VERSION": "18.x",
       "PYTHON_VERSION": "3.9"
     }
-  }
+  },
+  "buildCommand": "cd front-end && npm install && npm run build"
 }
