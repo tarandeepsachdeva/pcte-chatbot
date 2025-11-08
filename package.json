@@ -2,12 +2,10 @@
   "name": "pcte-chatbot",
   "version": "1.0.0",
   "private": true,
-  "type": "module",
   "scripts": {
-    "build": "echo 'Build is handled by Vercel configuration'",
-    "vercel-build": "cd front-end && npm install && npm run build"
+    "build": "cd front-end && npm install && npm run build"
   },
   "engines": {
-    "node": ">=14.0.0"
+    "node": ">=20.0.0"
   }
 }
