@@ -3,14 +3,9 @@
   "version": "1.0.0",
   "private": true,
   "scripts": {
-    "build": "cd front-end && npm install && npm run build",
-    "dev": "cd front-end && npm run dev",
-    "start": "cd front-end && npm start"
+    "build": "cd front-end && npm install && npm run build"
   },
   "engines": {
-    "node": ">=18.0.0"
-  },
-  "workspaces": [
-    "front-end"
-  ]
+    "node": "18.x"
+  }
 }
