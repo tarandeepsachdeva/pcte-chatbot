@@ -17,5 +17,10 @@
   "routes": [
     { "src": "/api/(.*)", "dest": "/api/chat.py" },
     { "src": "/(.*)", "dest": "/front-end/dist/$1" }
-  ]
+  ],
+  "functions": {
+    "front-end/api/chat.py": {
+      "runtime": "python3.9"
+    }
+  }
 }

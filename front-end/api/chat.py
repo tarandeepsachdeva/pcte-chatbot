@@ -1,4 +1,3 @@
-from http.server import BaseHTTPRequestHandler
 import json
 import os
 import google.generativeai as genai
@@ -6,7 +5,6 @@ import random
 import logging
 from datetime import datetime
 import sys
-import os
 
 # Add the current directory to the path
 sys.path.append(os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
@@ -207,52 +205,50 @@ def handler(event, context):
         else:
             # Use Gemini with PDF context for PCTE-related queries
             final_response, response_source = get_gemini_response(
-                user_message, 
+                message, 
                 use_pdf_context=is_about_pcte
             )
             confidence = 0.7  # Medium confidence for AI-generated responses
         
         return {
             'statusCode': 200,
-            'headers': {
-                'Content-Type': 'application/json',
-                'Access-Control-Allow-Origin': '*'
-            },
             'body': json.dumps({
                 'message': final_response,
                 'status': 'success',
                 'timestamp': datetime.utcnow().isoformat() + 'Z',
-                'user_input': user_message,
+                'user_input': message,
                 'response_source': response_source,
                 'local_confidence': confidence if response_source == "local_intents" else None,
                 'hybrid_mode': True
-            })
+            }),
+            'headers': {
+                'Content-Type': 'application/json',
+                'Access-Control-Allow-Origin': '*',
+                'Access-Control-Allow-Methods': 'POST, OPTIONS',
+                'Access-Control-Allow-Headers': 'Content-Type, Authorization'
+            }
         }
         
     except json.JSONDecodeError:
         return {
             'statusCode': 400,
+            'body': json.dumps({'error': 'Invalid JSON'}),
             'headers': {
                 'Content-Type': 'application/json',
-                'Access-Control-Allow-Origin': '*'
-            },
-            'body': json.dumps({
-                'error': 'Invalid JSON',
-                'status': 'error',
-                'timestamp': datetime.utcnow().isoformat() + 'Z'
-            })
+                'Access-Control-Allow-Origin': '*',
+                'Access-Control-Allow-Methods': 'POST, OPTIONS',
+                'Access-Control-Allow-Headers': 'Content-Type, Authorization'
+            }
         }
     except Exception as e:
         logger.error(f"Error in handler: {str(e)}")
         return {
             'statusCode': 500,
+            'body': json.dumps({'error': 'Internal server error', 'details': str(e)}),
             'headers': {
                 'Content-Type': 'application/json',
-                'Access-Control-Allow-Origin': '*'
-            },
-            'body': json.dumps({
-                'error': f'Internal server error: {str(e)}',
-                'status': 'error',
-                'timestamp': datetime.utcnow().isoformat() + 'Z'
-            })
+                'Access-Control-Allow-Origin': '*',
+                'Access-Control-Allow-Methods': 'POST, OPTIONS',
+                'Access-Control-Allow-Headers': 'Content-Type, Authorization'
+            }
         }
