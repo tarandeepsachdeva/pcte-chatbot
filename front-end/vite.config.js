@@ -6,18 +6,15 @@ export default defineConfig({
   build: {
     // Disable source maps to save memory
     sourcemap: false,
-    // Enable minification
-    minify: 'terser',
-    // Configure Terser options for better minification
-    terserOptions: {
-      compress: {
-        // Drop console logs in production
-        drop_console: true,
-        // Other optimizations
-        ecma: 2020,
-        keep_fargs: false,
-        passes: 2
-      }
+    // Use ESBuild for minification (included with Vite)
+    minify: 'esbuild',
+    // ESBuild minification options
+    esbuild: {
+      drop: ['console'],  // Remove all console.* statements
+      pure: ['console.log'],  // Remove console.log specifically
+      minify: true,
+      target: 'es2020',
+      treeShaking: true
     },
     // Disable code splitting to reduce memory usage
     rollupOptions: {
