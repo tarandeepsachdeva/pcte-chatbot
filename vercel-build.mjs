@@ -44,16 +44,15 @@ async function main() {
     process.exit(1);
   }
 
-  console.log('Running build with memory optimization...');
-  if (!runCommand('NODE_OPTIONS=--max_old_space_size=768 npx vite build --mode production', frontendDir, {
+  console.log('Running build with optimized Vite configuration...');
+  if (!runCommand('NODE_OPTIONS=--max_old_space_size=768 npx vite build', frontendDir, {
     NODE_OPTIONS: '--max_old_space_size=768',
     NODE_ENV: 'production',
-    GENERATE_SOURCEMAP: 'false'
+    // Force Vite to use the config file we just created
+    VITE_USER_NODE_ENV: 'production'
   })) {
-    console.log('Build failed, trying with source maps disabled...');
-    if (!runCommand('NODE_OPTIONS=--max_old_space_size=768 GENERATE_SOURCEMAP=false npx vite build --mode production', frontendDir)) {
-      process.exit(1);
-    }
+    console.error('Build failed with optimized configuration');
+    process.exit(1);
   }
 
   console.log('Build completed successfully!');
